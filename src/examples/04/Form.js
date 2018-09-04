@@ -40,7 +40,9 @@ export default class Form extends React.PureComponent {
         let response = await onSubmit(values)
         // do something
         console.log(response)
-        this.setState({ state: { isLoading: false, response } })
+        this.setState({
+          state: { isLoading: false, errorMessage: "", response }
+        })
       } catch (error) {
         console.log(error)
         this.setState({

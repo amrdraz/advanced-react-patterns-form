@@ -9,10 +9,7 @@ import Form from "./Form"
 // becomes somthing like
 // const EmailField = withFormField(({ state, form }) => <input type="email">)
 class Page extends React.Component {
-  // what about validation
-  // what if someone wants to pass an onChange to an input
-  // what if a field depends on another field
-  // what about nested formGroups
+  //  👉 create wrapped FormFiled for the input rating and textarea fields
   render() {
     return (
       <Form onSubmit={request}>
