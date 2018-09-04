@@ -1,0 +1,47 @@
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.form-field {
+  max-width: 50rem;
+  margin: 0.5rem 0;
+}
+
+.form-field__label-container {
+  display: flex;
+}
+.form-field__label-text {
+  flex: 1;
+  text-align: right;
+  padding-right: 1rem;
+}
+.form-field__input-container {
+  flex: 2;
+  display: block;
+}
+.form-field__input-container > * {
+  display: block;
+}
+.form__error-message {
+  margin: 0.5rem 0;
+  height: 2rem;
+  color: white;
+  font-size: 13px;
+  line-height: 2rem;
+  text-align: center;
+  background-color: red;
+}
+.form__submit-btn {
+}
