@@ -16,23 +16,36 @@ h1 {
 
 .form-field {
   max-width: 50rem;
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
 }
 
 .form-field__label-container {
   display: flex;
 }
+.form--vertical .form-field__label-container {
+  flex-direction: column;
+}
+
 .form-field__label-text {
   flex: 1;
   text-align: right;
   padding-right: 1rem;
 }
+
+.form--vertical .form-field__label-text {
+  text-align: left;
+  padding-bottom: 0.25rem;
+}
+
 .form-field__input-container {
   flex: 2;
   display: block;
 }
 .form-field__input-container > * {
   display: block;
+}
+.form--vertical .form-field__input-container > * {
+  width: 100%;
 }
 .form__error-message {
   margin: 0.5rem 0;
@@ -44,4 +57,19 @@ h1 {
   background-color: red;
 }
 .form__submit-btn {
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+  margin-left: -1rem;
+}
+.row .col {
+  margin-left: 1rem;
+}
+.col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }

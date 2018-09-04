@@ -1,11 +1,15 @@
 import React from "react";
 
 class Page extends React.Component {
+  // 👉give an overview of the logic
+  // 👉move fields logic to seperate class
   fields = {};
   state = { isLoading: false, errorMessage: "" };
   render() {
     const { onSubmit, getFieldOnChange, getFieldValue, getFieldError } = this;
     const { isLoading, errorMessage } = this.state;
+    // 👉create form component
+    // 👉create component for each field as well as error, and button section
     return (
       <form className="form" onSubmit={onSubmit}>
         <div className="form-field">

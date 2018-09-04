@@ -1,3 +1,4 @@
+import React from "react";
 import { EventEmitter } from "../../utils/event-emitter";
 
 export class FormStateManager extends EventEmitter {
