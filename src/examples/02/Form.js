@@ -1,20 +1,20 @@
-import React from "react";
+import React from "react"
 
 export const ErrorSection = ({ state }) => {
-  const { errorMessage } = state;
+  const { errorMessage } = state
   return (
     errorMessage && <div className="form__error-message">{errorMessage}</div>
-  );
-};
+  )
+}
 
 export const ButtonSection = ({ state }) => {
-  const { isLoading } = state;
+  const { isLoading } = state
   return (
     <button className="form__submit-btn" disabled={isLoading}>
       {isLoading ? "Loading..." : "Submit"}
     </button>
-  );
-};
+  )
+}
 
 export const InputField = ({ label, name, form, ...props }) => {
   return (
@@ -34,8 +34,8 @@ export const InputField = ({ label, name, form, ...props }) => {
         {form.getFieldError(name)}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const RatingField = ({ label, name, form }) => {
   return (
@@ -55,8 +55,8 @@ export const RatingField = ({ label, name, form }) => {
         {form.getFieldError(name)}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const TextAreaField = ({ label, name, form, ...props }) => {
   return (
@@ -76,5 +76,5 @@ export const TextAreaField = ({ label, name, form, ...props }) => {
         {form.getFieldError(name)}
       </div>
     </div>
-  );
-};
+  )
+}

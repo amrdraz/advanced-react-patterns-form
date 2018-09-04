@@ -1,8 +1,20 @@
-import React from "react";
-import { request } from "../../utils/backend";
-import Form from "./Form";
+import React from "react"
+import { request } from "../../utils/backend"
+import { FormFactory } from "./Form"
 
+const Form = FormFactory.create()
+
+// 👉 create a higher order component withFormField that wraps a form field
+// <Form.Field name="email" label="Email">
+//   <StarRating />
+// </Form.Field >
+// becomes somthing like
+// const EmailField = withFormField(({ state, form }) => <input type="email">)
 class Page extends React.Component {
+  // what about validation
+  // what if someone wants to pass an onChange to an input
+  // what if a field depends on another field
+  // what about nested formGroups
   render() {
     return (
       <Form onSubmit={request}>
@@ -24,8 +36,8 @@ class Page extends React.Component {
         <Form.Error />
         <Form.Button />
       </Form>
-    );
+    )
   }
 }
 
-export { Page };
+export { Page }

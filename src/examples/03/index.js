@@ -1,13 +1,13 @@
-import React from "react";
-import { request } from "../../utils/backend";
-import BaseForm from "./Form";
+import React from "react"
+import { request } from "../../utils/backend"
+import BaseForm from "./Form"
 
 // create context here, then move it into the manager
 
 class Form extends BaseForm {
   render() {
-    const { form, state, props, onSubmit } = this;
-    const { children } = props;
+    const { form, state, props, onSubmit } = this
+    const { children } = props
 
     // 👉create a 2 column layout form
     // you can use form--vertical for have the fields take a column direction
@@ -20,10 +20,10 @@ class Form extends BaseForm {
           return React.cloneElement(child, {
             state,
             form
-          });
+          })
         })}
       </form>
-    );
+    )
   }
 }
 
@@ -43,8 +43,8 @@ class Page extends React.Component {
         <Form.Error />
         <Form.Button />
       </Form>
-    );
+    )
   }
 }
 
-export { Page };
+export { Page }

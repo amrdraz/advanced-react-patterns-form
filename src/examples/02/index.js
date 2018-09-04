@@ -1,18 +1,18 @@
-import React from "react";
-import { request } from "../../utils/backend";
-import { FormStateManager } from "./form-manager";
+import React from "react"
+import { request } from "../../utils/backend"
+import { FormStateManager } from "./form-manager"
 import {
   InputField,
   RatingField,
   TextAreaField,
   ButtonSection,
   ErrorSection
-} from "./Form";
+} from "./Form"
 
 class Form extends React.Component {
   // 👉move the state and formState manager here
   render() {
-    const { onSubmit, children } = this.props;
+    const { onSubmit, children } = this.props
     // 👉 have Form pass state and form to it's children
     // lookup https://reactjs.org/docs/react-api.html#reactchildren
     // use React.Children.map and React.cloneElement
@@ -20,7 +20,7 @@ class Form extends React.Component {
       <form className="form" onSubmit={onSubmit}>
         {children}
       </form>
-    );
+    )
   }
   // 👉move the handler for common submission cases
   // 👉create compound components since they practically don't work without Form
@@ -28,10 +28,10 @@ class Form extends React.Component {
 }
 
 class Page extends React.Component {
-  state = { isLoading: false, errorMessage: "" };
-  form = new FormStateManager(this);
+  state = { isLoading: false, errorMessage: "" }
+  form = new FormStateManager(this)
   render() {
-    const { onSubmit, form, state } = this;
+    const { onSubmit, form, state } = this
     return (
       <Form onSubmit={onSubmit}>
         <InputField label="Email" name="email" form={form} type="email" />
@@ -40,28 +40,28 @@ class Page extends React.Component {
         <ErrorSection state={state} />
         <ButtonSection state={state} />
       </Form>
-    );
+    )
   }
   onSubmit = async event => {
-    event.preventDefault();
-    let { values, allValid } = await this.form.validateFields();
+    event.preventDefault()
+    let { values, allValid } = await this.form.validateFields()
     if (allValid) {
-      this.setState({ isLoading: true, errorMessage: "" });
+      this.setState({ isLoading: true, errorMessage: "" })
       try {
-        let response = await request(values);
+        let response = await request(values)
         // do something
-        console.log(response);
-        this.setState({ isLoading: false, response });
+        console.log(response)
+        this.setState({ isLoading: false, response })
       } catch (error) {
-        console.log(error);
+        console.log(error)
         this.setState({
           isLoading: false,
           errorMessage: error.message,
           response: error.response
-        });
+        })
       }
     }
-  };
+  }
 }
 
-export { Page };
+export { Page }
