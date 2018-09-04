@@ -1,8 +1,6 @@
 import React from "react"
 import { request } from "../../utils/backend"
-import { FormFactory } from "./Form"
-
-const Form = FormFactory.create()
+import Form from "./Form"
 
 // 👉 create a higher order component withFormField that wraps a form field
 // <Form.Field name="email" label="Email">
